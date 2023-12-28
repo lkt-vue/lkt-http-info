@@ -5,4 +5,5 @@ export declare class Settings {
      */
     static customTitles: LktObject;
     static customMessages: LktObject;
+    static customIcons: LktObject;
 }

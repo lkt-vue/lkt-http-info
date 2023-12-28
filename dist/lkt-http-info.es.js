@@ -1,39 +1,71 @@
-var a = Object.defineProperty;
-var c = (t, e, s) => e in t ? a(t, e, { enumerable: !0, configurable: !0, writable: !0, value: s }) : t[e] = s;
-var o = (t, e, s) => (c(t, typeof e != "symbol" ? e + "" : e, s), s);
-import { defineComponent as f, computed as i, openBlock as p, createElementBlock as d, createElementVNode as r, toDisplayString as l } from "vue";
+var _ = Object.defineProperty;
+var v = (t, s, e) => s in t ? _(t, s, { enumerable: !0, configurable: !0, writable: !0, value: e }) : t[s] = e;
+var a = (t, s, e) => (v(t, typeof s != "symbol" ? s + "" : s, e), e);
+import { defineComponent as I, computed as c, openBlock as u, createElementBlock as r, normalizeClass as p, createElementVNode as o, createCommentVNode as m, toDisplayString as f } from "vue";
 class n {
 }
-o(n, "customTitles", {
+a(n, "customTitles", {
+  200: "Success",
   403: "Forbidden",
   404: "Not Found",
   500: "Internal Server Error"
-}), o(n, "customMessages", {});
-const k = (t, e, s) => {
-  n.customTitles[t] = e, n.customMessages[t] = s;
-}, m = (t) => typeof n.customTitles[t] < "u" ? n.customTitles[t] : "", g = (t) => typeof n.customMessages[t] < "u" ? n.customMessages[t] : "", v = { name: "LktHttpInfo", inheritAttrs: !1 }, y = /* @__PURE__ */ f({
-  ...v,
+}), a(n, "customMessages", {
+  403: "You don't have access"
+}), a(n, "customIcons", {});
+const j = (t, s, e, l) => {
+  typeof s < "u" && (n.customTitles[t] = s), typeof e < "u" && (n.customMessages[t] = e), typeof l < "u" && (n.customIcons[t] = l);
+}, q = (t) => typeof n.customTitles[t] < "u" ? n.customTitles[t] : "", C = (t) => typeof n.customMessages[t] < "u" ? n.customMessages[t] : "", H = (t) => typeof n.customIcons[t] < "u" ? n.customIcons[t] : "", M = { class: "lkt-http-info-header" }, S = {
+  key: 0,
+  class: "lkt-http-info-icon"
+}, T = { class: "lkt-http-info-code" }, D = { class: "lkt-http-info-title" }, B = { class: "lkt-http-info-message" }, E = /* @__PURE__ */ o("i", null, null, -1), N = [
+  E
+], x = { name: "LktHttpInfo", inheritAttrs: !1 }, F = /* @__PURE__ */ I({
+  ...x,
   props: {
     code: { type: String, required: !0 },
-    title: { type: String, required: !1 },
-    message: { type: String, required: !1 }
+    title: { type: String, required: !1, default: "" },
+    message: { type: String, required: !1, default: "" },
+    icon: { type: String, required: !1, default: "" },
+    quick: { type: Boolean, required: !1, default: !1 },
+    canClose: { type: Boolean, required: !1, default: !1 },
+    palette: { type: String, required: !1, default: "warning" }
   },
-  setup(t) {
-    const e = t, s = i(() => e.title !== "" ? e.title : m(e.code)), u = i(() => e.message !== "" ? e.message : g(e.code));
-    return (I, M) => (p(), d("div", null, [
-      r("div", null, [
-        r("div", null, l(t.code), 1),
-        r("div", null, l(s.value), 1)
+  emits: ["close"],
+  setup(t, { emit: s }) {
+    const e = t, l = s, h = c(() => e.title !== "" ? e.title : q(e.code)), k = c(() => e.message !== "" ? e.message : C(e.code)), d = c(() => e.message !== "" ? e.message : H(e.code)), g = c(() => {
+      let i = ["lkt-http-info"];
+      return e.quick && i.push("lkt-http-info-quick"), e.palette && i.push(`lkt-http-info--${e.palette}`), i.join(" ");
+    }), y = (i) => {
+      l("close", i);
+    };
+    return (i, L) => (u(), r("div", {
+      class: p(g.value)
+    }, [
+      o("div", M, [
+        d.value ? (u(), r("div", S, [
+          o("i", {
+            class: p(d.value)
+          }, null, 2)
+        ])) : m("", !0),
+        o("div", null, [
+          o("div", T, f(t.code), 1),
+          o("div", D, f(h.value), 1)
+        ])
       ]),
-      r("div", null, l(u.value), 1)
-    ]));
+      o("div", B, f(k.value), 1),
+      t.canClose ? (u(), r("div", {
+        key: 0,
+        class: "lkt-http-info-close",
+        onClick: y
+      }, N)) : m("", !0)
+    ], 2));
   }
-}), H = {
-  install: (t, e = {}) => {
-    t.component("lkt-http-info", y);
+}), w = {
+  install: (t, s = {}) => {
+    t.component("lkt-http-info", F);
   }
 };
 export {
-  H as default,
-  k as setDefaultHttpInfo
+  w as default,
+  j as setDefaultHttpInfo
 };

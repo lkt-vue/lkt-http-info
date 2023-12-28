@@ -7,12 +7,36 @@ declare const _default: {
         title: {
             type: StringConstructor;
             required: false;
+            default: string;
         };
         message: {
             type: StringConstructor;
             required: false;
+            default: string;
         };
-    }>>, {}, unknown, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, {}, import("vue").VNodeProps & import("vue").AllowedComponentProps & import("vue").ComponentCustomProps & Readonly<import("vue").ExtractPropTypes<{
+        icon: {
+            type: StringConstructor;
+            required: false;
+            default: string;
+        };
+        quick: {
+            type: BooleanConstructor;
+            required: false;
+            default: boolean;
+        };
+        canClose: {
+            type: BooleanConstructor;
+            required: false;
+            default: boolean;
+        };
+        palette: {
+            type: StringConstructor;
+            required: false;
+            default: string;
+        };
+    }>> & {
+        onClose?: ((...args: any[]) => any) | undefined;
+    }, {}, unknown, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, "close"[], import("vue").VNodeProps & import("vue").AllowedComponentProps & import("vue").ComponentCustomProps & Readonly<import("vue").ExtractPropTypes<{
         code: {
             type: StringConstructor;
             required: true;
@@ -20,12 +44,43 @@ declare const _default: {
         title: {
             type: StringConstructor;
             required: false;
+            default: string;
         };
         message: {
             type: StringConstructor;
             required: false;
+            default: string;
         };
-    }>>, {}, true, {}, {}, {
+        icon: {
+            type: StringConstructor;
+            required: false;
+            default: string;
+        };
+        quick: {
+            type: BooleanConstructor;
+            required: false;
+            default: boolean;
+        };
+        canClose: {
+            type: BooleanConstructor;
+            required: false;
+            default: boolean;
+        };
+        palette: {
+            type: StringConstructor;
+            required: false;
+            default: string;
+        };
+    }>> & {
+        onClose?: ((...args: any[]) => any) | undefined;
+    }, {
+        message: string;
+        title: string;
+        icon: string;
+        quick: boolean;
+        canClose: boolean;
+        palette: string;
+    }, true, {}, {}, {
         P: {};
         B: {};
         D: {};
@@ -40,12 +95,43 @@ declare const _default: {
         title: {
             type: StringConstructor;
             required: false;
+            default: string;
         };
         message: {
             type: StringConstructor;
             required: false;
+            default: string;
         };
-    }>>, {}, {}, {}, {}, {}>;
+        icon: {
+            type: StringConstructor;
+            required: false;
+            default: string;
+        };
+        quick: {
+            type: BooleanConstructor;
+            required: false;
+            default: boolean;
+        };
+        canClose: {
+            type: BooleanConstructor;
+            required: false;
+            default: boolean;
+        };
+        palette: {
+            type: StringConstructor;
+            required: false;
+            default: string;
+        };
+    }>> & {
+        onClose?: ((...args: any[]) => any) | undefined;
+    }, {}, {}, {}, {}, {
+        message: string;
+        title: string;
+        icon: string;
+        quick: boolean;
+        canClose: boolean;
+        palette: string;
+    }>;
     __isFragment?: undefined;
     __isTeleport?: undefined;
     __isSuspense?: undefined;
@@ -57,12 +143,43 @@ declare const _default: {
     title: {
         type: StringConstructor;
         required: false;
+        default: string;
     };
     message: {
         type: StringConstructor;
         required: false;
+        default: string;
     };
-}>>, {}, unknown, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, {}, string, {}, {}, string, {}> & import("vue").VNodeProps & import("vue").AllowedComponentProps & import("vue").ComponentCustomProps & (new () => {
+    icon: {
+        type: StringConstructor;
+        required: false;
+        default: string;
+    };
+    quick: {
+        type: BooleanConstructor;
+        required: false;
+        default: boolean;
+    };
+    canClose: {
+        type: BooleanConstructor;
+        required: false;
+        default: boolean;
+    };
+    palette: {
+        type: StringConstructor;
+        required: false;
+        default: string;
+    };
+}>> & {
+    onClose?: ((...args: any[]) => any) | undefined;
+}, {}, unknown, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, "close"[], "close", {
+    message: string;
+    title: string;
+    icon: string;
+    quick: boolean;
+    canClose: boolean;
+    palette: string;
+}, {}, string, {}> & import("vue").VNodeProps & import("vue").AllowedComponentProps & import("vue").ComponentCustomProps & (new () => {
     $slots: {};
 });
 export default _default;

@@ -1,0 +1,114 @@
+.lkt-http-info {
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap);
+    border: 1px solid var(--warning-color);
+    padding: 15px;
+    background: var(--http-info-background-color);
+    border-radius: var(--http-info-border-radius);
+    align-items: center;
+    position: relative;
+}
+
+.lkt-http-info-header {
+    display: flex;
+    flex-direction: row;
+    gap: var(--gap);
+    align-items: center;
+}
+
+.lkt-http-info-code {
+    font-size: var(--http-info-code-font-size);
+    font-weight: 600;
+}
+
+.lkt-http-info-title {
+    font-size: var(--http-info-title-font-size);
+    font-weight: 600;
+}
+
+.lkt-http-info-message {
+    font-size: var(--http-info-message-font-size);
+}
+
+.lkt-http-info-icon {
+    font-size: var(--http-info-icon-font-size);
+}
+
+.lkt-http-info-quick {
+    flex-direction: row;
+}
+
+.lkt-http-info-quick .lkt-http-info-title,
+.lkt-http-info-quick .lkt-http-info-code {
+    font-size: var(--http-info-message-font-size);
+}
+
+
+
+
+.lkt-http-info--alert {
+    background: var(--alert-contrast);
+    border-color: var(--alert-color);
+}
+
+.lkt-http-info--danger {
+    background: var(--danger-contrast);
+    border-color: var(--danger-color);
+}
+
+.lkt-http-info--info {
+    background: var(--info-contrast);
+    border-color: var(--info-color);
+}
+
+.lkt-http-info--warning {
+    background: var(--warning-contrast);
+    border-color: var(--warning-color);
+}
+
+.lkt-http-info--target {
+    background: var(--target-contrast);
+    border-color: var(--target-color);
+}
+
+.lkt-http-info--success {
+    background: var(--success-contrast);
+    border-color: var(--success-color);
+}
+
+
+
+.lkt-http-info-close {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s linear;
+    height: var(--http-info-close-size);
+    position: absolute;
+    right: 0;
+    top: 0;
+    padding: 5px;
+    min-width: var(--http-info-close-size);
+}
+
+.lkt-http-info-close:hover {
+    background: rgba(0, 0, 0, .1);
+}
+
+.lkt-http-info-close i {
+    display: flex;
+    height: 100%;
+    align-content: center;
+    align-items: center;
+    padding: 0;
+    text-align: center;
+}
+
+.lkt-http-info-close:before {
+    content: 'x';
+    display: block;
+    font-family: sans-serif;
+}
